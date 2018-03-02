@@ -30,23 +30,25 @@ const routes = [{
 export default class MainNav extends Component {
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand></Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            {
-              routes.map((route, key) => {
-                return (
-                  <NavItem eventKey={ key } href={ route.path }>{ route.name }</NavItem>
-                );
-              })
-            }
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <header>
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand></Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav>
+              {
+                routes.map((route, key) => {
+                  return (
+                    <NavItem eventKey={ key } href={ route.path } key={ key }>{ route.name }</NavItem>
+                  );
+                })
+              }
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </header>
     );
   }
 }

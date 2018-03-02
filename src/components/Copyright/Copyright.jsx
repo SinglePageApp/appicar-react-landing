@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Copyright.css';
 
@@ -11,12 +12,12 @@ export default class Copyright extends Component {
         <div className="container">
           <div className="w3agile-list">
             <ul>
-              <li><a href="about.html">nav.about</a></li>
-              <li><a href="#stores">nav.stores</a></li>
-              <li><a href="#" className="nav-my-account">nav.myAccount</a></li>
-              <li><a href="#services">nav.services</a></li>
-              <li><a href="#reviews">nav.reviews</a></li>
-              <li><a href="#contact">nav.contact</a></li>
+              <li><Link to="/">nav.about</Link></li>
+              <li><Link to="/#stores">nav.stores</Link></li>
+              <li><a href="http://my-react.appicar.com/" className="nav-my-account">nav.myAccount</a></li>
+              <li><Link to="/#services">nav.services</Link></li>
+              <li><Link to="/#reviews">nav.reviews</Link></li>
+              <li><Link to="/#contact">nav.contact</Link></li>
             </ul>
           </div>
           <div className="agileinfo">
