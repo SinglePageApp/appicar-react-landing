@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+
+import HashNavItem from '../../Navigation/HashNavItem';
 
 // import Flags from './Flags/Flags'
 import "./NavLinks.css";
@@ -55,11 +56,7 @@ export default class MainNav extends Component {
                 </NavItem>
               );
             } else {
-              template = (
-                <LinkContainer to={ route.path } key={ key }>
-                  <NavItem>{ route.name } </NavItem>
-                </LinkContainer>
-              );
+              template = <HashNavItem key={ key } name={ route.name } to={ route.path } />;
             }
             return template;
           })
