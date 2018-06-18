@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Header from './Header/Header';
+import Header from '../Header/Header';
 import Offers from './Offers/Offers';
 import Team from './Team/Team';
 

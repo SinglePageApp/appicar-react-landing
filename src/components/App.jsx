@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 import MainNav from './MainNav/MainNav';
 import Logo from './Logo/Logo';
@@ -14,17 +15,19 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <Switch>
+      <Router history={ createBrowserHistory() }>
+        <div>
           <MainNav />
-          <Route exact path="/about" component={ AboutPage } />
-          <Route exact path="/404" component={ Error404 } />
-          <Route path="/" component={ HomePage } />
-        </Switch>
-        <Logo />
-        <Footer />
-        <Copyright />
-      </div>
+          <Logo />
+          <Switch>
+            <Route path="/about" component={ AboutPage } />
+            <Route path="/404" component={ Error404 } />
+            <Route path="/" component={ HomePage } />
+          </Switch>
+          <Footer />
+          <Copyright />
+        </div>
+      </Router>
     );
   }
 }

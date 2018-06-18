@@ -3,11 +3,13 @@ import { Spinner } from 'react-spinkit';
 
 import './Stores.css';
 
+
 export default class Stores extends Component {
 
   constructor() {
     super();
-    this.isLoading = true;
+    this.isLoading = false;
+
     this.stores = [{
       _id: 'ZPoYEMmanZgmFvYpC',
       name: 'LeRot',
@@ -20,55 +22,61 @@ export default class Stores extends Component {
       lng: -68.8562777,
       image: 'https://scontent.fsst1-2.fna.fbcdn.net/v/t1.0-9/549912_545086052190044_760590764_n.jpg?oh=44eaa03704f9133e583c4db036273d4d&oe=5B456457'
     }];
+
+    this.isRowOdd = this.isRowOdd.bind(this);
+  }
+
+  isRowOdd(i) {
+    return true
   }
 
   render() {
     return (
-      <div id='stores' class='special'>
-        <div class='container'>
-          <div class='special-heading'>
-            <h3 translate>home-page.stores.title</h3>
+      <div id="stores" className="special">
+        <div className="container">
+          <div className="special-heading">
+            <h3>home-page.stores.title</h3>
           </div>
 
           { this.isLoading ? (
-              <Spinner name='line-scale' color='blue'/>
+              <Spinner name="line-scale" color="blue"/>
             ) : (
-              <div class='special-grids'>
+              <div className="special-grids">
                 {
                   this.stores.map((store, key) => {
                     return (
-                      <div class='col-md-4 w3l-special-grid' key={ key }>
+                      <div className="col-md-4 w3l-special-grid" key={ key }>
                         { this.isRowOdd(key) ? ( // Odd Row
                             <div>
-                              <div class='col-md-6 w3ls-special-img'>
-                                <div class='w3ls-special-text effect-1'>
-                                  <img class='storeImage' src={ store.image } alt={ store.name } />
+                              <div className="col-md-6 w3ls-special-img">
+                                <div className="w3ls-special-text effect-1">
+                                  <img className="storeImage" src={ store.image } alt={ store.name } />
                                 </div>
                               </div>
-                              <div class='col-md-6 agileits-special-info'>
+                              <div className="col-md-6 agileits-special-info">
                                 <h4>{ store.name }</h4>
                                 <p>
                                   <b>{ store.description }</b>
                                   <br />{ store.address }, { store.city }
                                 </p>
                               </div>
-                              <div class='clearfix'></div>
+                              <div className="clearfix"></div>
                             </div>
                           ) : ( // Even Row
                             <div>
-                              <div class='col-md-6 agileits-special-info'>
+                              <div className="col-md-6 agileits-special-info">
                                 <h4>{ store.name }</h4>
                                 <p>
                                   <b>{ store.description }</b>
                                   <br />{ store.address }, { store.city }
                                 </p>
                               </div>
-                              <div class='col-md-6 w3ls-special-img'>
-                                <div class='w3ls-special-text effect-1'>
-                                  <img class='storeImage' src={ store.image } alt={ store.name } />
+                              <div className="col-md-6 w3ls-special-img">
+                                <div className="w3ls-special-text effect-1">
+                                  <img className="storeImage" src={ store.image } alt={ store.name } />
                                 </div>
                               </div>
-                              <div class='clearfix'></div>
+                              <div className="clearfix"></div>
                             </div>
                           )
                         }
@@ -76,7 +84,7 @@ export default class Stores extends Component {
                     );
                   })
                 }
-                <div class='clearfix'> </div>
+                <div className="clearfix"> </div>
               </div>
             )
           }

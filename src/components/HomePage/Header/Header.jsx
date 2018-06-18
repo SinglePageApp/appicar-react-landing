@@ -9,7 +9,7 @@ export default class Header extends Component {
 
   constructor() {
     super();
-    this.isLoading = true;
+    this.isLoading = false;
     
     this.stores = [{
       _id: 'ZPoYEMmanZgmFvYpC',
