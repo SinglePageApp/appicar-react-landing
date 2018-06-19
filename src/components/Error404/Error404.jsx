@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import SearchBox from '../SearchBox/SearchBox';
+
 import './Error404.css';
 
 const NUM_FLAMES = 5;

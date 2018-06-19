@@ -8,7 +8,7 @@ export default class Offers extends Component {
       <div className="jarallax offers">
         <div className="container">
           <div className="offers-heading">
-            <h3 translate>about-page.offers</h3>
+            <h3>about-page.offers</h3>
           </div>
           <div className="offers-grids">
             <div className="col-md-6 wthree-offers-left">

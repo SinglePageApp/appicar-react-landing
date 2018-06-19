@@ -47,7 +47,7 @@ ul.nav.navbar-nav {
   padding-bottom: 1em;
   border-bottom: solid 1px #fd5c63;
 }
-.navbar ul li a.active {
+.navbar ul li.active a {
   color: #fd5c63 !important;
   padding-bottom: 1em;
   border-bottom: solid 1px #fd5c63;
