@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavItem } from 'react-bootstrap';
-import { LinkContainer } from "react-router-bootstrap";
+import { IndexLinkContainer } from "react-router-bootstrap";
 
 export default class HashNavItem extends Component {
 
@@ -11,8 +11,9 @@ export default class HashNavItem extends Component {
     this.observer = null;
     this.asyncTimerId = null;
     this.scrollFunction = null;
+    // States.
     this.state = {
-      key: props.key,
+      key: props.eventKey,
       name: props.name,
       to: props.to
     }
@@ -87,9 +88,9 @@ export default class HashNavItem extends Component {
 
   render() {
     return (
-      <LinkContainer to={ this.state.to } key={ this.state.key }>
-        <NavItem onClick={ this.handleClick }>{ this.state.name } </NavItem>
-      </LinkContainer>
+      <IndexLinkContainer to={ this.state.to }>
+        <NavItem eventKey={ this.state.key } key={ this.state.key } onClick={ this.handleClick }>{ this.state.name } </NavItem>
+      </IndexLinkContainer>
     );
   }
 }

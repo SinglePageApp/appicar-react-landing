@@ -20,9 +20,9 @@ class App extends Component {
           <MainNav />
           <Logo />
           <Switch>
-            <Route path="/about" component={ AboutPage } />
-            <Route path="/404" component={ Error404 } />
-            <Route path="/" component={ HomePage } />
+            <Route exact path="/" component={ HomePage } />
+            <Route exact path="/about" component={ AboutPage } />
+            <Route exact path="/404" component={ Error404 } />
           </Switch>
           <Footer />
           <Copyright />

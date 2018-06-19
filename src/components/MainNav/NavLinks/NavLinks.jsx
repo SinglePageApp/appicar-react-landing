@@ -51,12 +51,12 @@ export default class MainNav extends Component {
           routes.map((route, key) => {
             if (route.external) {
               template = (
-                <NavItem eventKey={ key } href={ route.path } key={ key }>
+                <NavItem eventKey={ 'nav-' + key } href={ route.path } key={ key }>
                   {route.name}
                 </NavItem>
               );
             } else {
-              template = <HashNavItem key={ key } name={ route.name } to={ route.path } />;
+              template = <HashNavItem eventKey={ 'nav-' + key } name={ route.name } to={ route.path } key={ key } />;
             }
             return template;
           })
