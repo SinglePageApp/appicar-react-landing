@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import t from '../../../i18n';
+
 import './Reviews.css';
 
 export default class Reviews extends Component {
@@ -8,7 +10,7 @@ export default class Reviews extends Component {
       <div id="reviews" className="customer">
         <div className="container">
           <div className="customer-heading">
-            <h3>home-page.reviews.title</h3>
+            <h3>{ t('home-page.reviews.title') }</h3>
           </div>
           <div className="customer-heading-grids">
             <div className="col-md-4 customer-grid">

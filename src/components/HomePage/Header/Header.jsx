@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Spinner } from 'react-spinkit';
 
+import t from '../../../i18n';
 import SearchBox from '../../SearchBox/SearchBox';
 
 import './Header.css';
@@ -36,8 +37,8 @@ export default class Header extends Component {
         <div className="banner">
           <div className="container">
             <div className="banner-info">
-              <h2>home-page.header.title</h2>
-              <p>home-page.header.description</p>
+              <h2>{ t('home-page.header.title') }</h2>
+              <p>{ t('home-page.header.description') }</p>
             </div>
             { this.isLoading ? (
               <Spinner name="line-scale" color="blue" />

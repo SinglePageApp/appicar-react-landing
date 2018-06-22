@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Spinner } from 'react-spinkit';
 
+import t from '../../../i18n';
+
 import './Stores.css';
 
 
@@ -35,7 +37,7 @@ export default class Stores extends Component {
       <div id="stores" className="special">
         <div className="container">
           <div className="special-heading">
-            <h3>home-page.stores.title</h3>
+            <h3>{ t('home-page.stores.title') }</h3>
           </div>
 
           { this.isLoading ? (

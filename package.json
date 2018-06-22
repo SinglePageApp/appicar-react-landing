@@ -6,14 +6,15 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
-    "react": "^16.2.0",
+    "i18next": "^11.3.3",
+    "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.4.1",
     "react-router-bootstrap": "^0.24.4",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
     "react-spinkit": "^3.0.0",
-    "reactstrap": "^5.0.0-beta"
+    "reactstrap": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

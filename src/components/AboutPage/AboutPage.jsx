@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import t from '../../i18n';
 import Header from '../Header/Header';
 import Offers from './Offers/Offers';
 import Team from './Team/Team';
@@ -16,7 +17,7 @@ export default class AboutPage extends Component {
         <div className="about">
           <div className="container">
             <div className="about-heading">
-              <h2>about-page.title</h2>
+              <h2>{ t('about-page.title') }</h2>
             </div>
             <div className="about-grids">
               <div className="col-md-5 wthree-about-left">

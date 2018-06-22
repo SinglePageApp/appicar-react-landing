@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
+import t from '../../../i18n';
+
 import './Services.css';
+
 
 export default class Services extends Component {
   render() {
@@ -8,7 +11,7 @@ export default class Services extends Component {
       <div id="services" className="features">
         <div className="container">
           <div className="features-heading">
-            <h3>home-page.services.title</h3>
+            <h3>{ t('home-page.services.title') }</h3>
           </div>
           <div className="features-grids">
             <div className="col-md-4 features-left">
@@ -17,7 +20,7 @@ export default class Services extends Component {
             </div>
             <div className="col-md-8 features-right">
               <div className="features-right-info">
-                <h4>home-page.services.description</h4>
+                <h4>{ t('home-page.services.description') }</h4>
               </div>
               <div className="features-right-grids">
                 <div className="features-right-left" title="Tell me more!">

@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 
+import t from '../../../i18n';
 import HashNavItem from '../../Navigation/HashNavItem';
 
 // import Flags from './Flags/Flags'
 import "./NavLinks.css";
 
 const routes = [{
-  name: 'Home',
+  name: t('nav.home'),
   path: '/',
   external: false
 },{
-  name: 'About',
+  name: t('nav.about'),
   path: '/about',
   external: false
 }, {
-  name: 'Stores',
+  name: t('nav.stores'),
   path: '/#stores',
   external: false
 }, {
-  name: 'My Account',
+  name: t('nav.myAccount'),
   path: 'http://my-react.appicar.com/',
   external: true
 }, {
-  name: 'Services',
+  name: t('nav.services'),
   path: '/#services',
   external: false
 }, {
-  name: 'Reviews',
+  name: t('nav.reviews'),
   path: '/#reviews',
   external: false
 }, {
-  name: 'Contact',
+  name: t('nav.contact'),
   path: '/#contact',
   external: false
 }];

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import t from '../../../i18n';
+
 import './Offers.css';
 
 export default class Offers extends Component {
@@ -8,7 +10,7 @@ export default class Offers extends Component {
       <div className="jarallax offers">
         <div className="container">
           <div className="offers-heading">
-            <h3>about-page.offers</h3>
+            <h3>{ t('about-page.offers') }</h3>
           </div>
           <div className="offers-grids">
             <div className="col-md-6 wthree-offers-left">

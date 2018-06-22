@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import t from '../../i18n';
 import SearchBox from '../SearchBox/SearchBox';
 
 import './Error404.css';
@@ -28,7 +29,7 @@ export default class Error404 extends Component {
                   <span className="char10" aria-hidden="true">!</span>
                 </h1>
 
-                <p>error-404.description</p>
+                <p>{ t('error-404.description') }</p>
 
                 <div className="logfire">
                   {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import t from '../../i18n';
 import NavLinks from '../MainNav/NavLinks/NavLinks'
 import './Copyright.css';
 
@@ -14,7 +15,7 @@ export default class Copyright extends Component {
             <NavLinks />
           </div>
           <div className="agileinfo">
-            <p>© { YEAR } Appicar. copyright.description <a href="http://w3layouts.com/">W3layouts</a></p>
+            <p>© { YEAR } Appicar. { t('copyright.description') } <a href="http://w3layouts.com/">W3layouts</a></p>
           </div>
         </div>
       </div>

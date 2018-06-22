@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import t from '../../i18n';
+
 import './Footer.css';
 
 export default class Footer extends Component {
@@ -9,7 +11,7 @@ export default class Footer extends Component {
         <div className="container">
           <div className="footer-grids">
             <div className="footer-heading">
-              <h3>footer.title</h3>
+              <h3>{ t('footer.title') }</h3>
             </div>
             <div className="footer-icons">
               <ul>

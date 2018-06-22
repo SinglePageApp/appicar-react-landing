@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import t from '../../../i18n'
+
 import './Team.css';
 
 export default class Team extends Component {
@@ -8,13 +10,13 @@ export default class Team extends Component {
       <div className="team">
         <div className="container">
           <div className="team-heading">
-            <h3>about-page.team.title</h3>
+            <h3>{ t('about-page.team.title') }</h3>
           </div>
           <div className="team-grids">
             <div className="col-md-4 team-grid">
               <img src="../../../assets/images/t1.jpg" alt="" />
-              <h4>about-page.team.eng Matías J. Magni</h4>
-              <p>about-page.team.member1</p>
+              <h4>{ t('about-page.team.eng') } Matías J. Magni</h4>
+              <p>{ t('about-page.team.member1') }</p>
               <div className="icons">
                 <ul>
                   <li>
