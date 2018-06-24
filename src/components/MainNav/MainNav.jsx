@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
 
-// import Flags from './Flags/Flags'
 import NavLinks from './NavLinks/NavLinks'
 import "./MainNav.css";
+
 
 export default class MainNav extends Component {
   render() {

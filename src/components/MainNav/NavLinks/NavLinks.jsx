@@ -1,68 +1,77 @@
 import React, { Component } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
+import { I18n } from 'react-i18next';
 
-import t from '../../../i18n';
 import HashNavItem from '../../Navigation/HashNavItem';
+import Flags from './Flags/Flags';
 
-// import Flags from './Flags/Flags'
 import "./NavLinks.css";
 
+
 const routes = [{
-  name: t('nav.home'),
+  name: 'nav.home',
   path: '/',
   external: false
-},{
-  name: t('nav.about'),
+}, {
+  name: 'nav.about',
   path: '/about',
   external: false
 }, {
-  name: t('nav.stores'),
+  name: 'nav.stores',
   path: '/#stores',
   external: false
 }, {
-  name: t('nav.myAccount'),
+  name: 'nav.myAccount',
   path: 'http://my-react.appicar.com/',
   external: true
 }, {
-  name: t('nav.services'),
+  name: 'nav.services',
   path: '/#services',
   external: false
 }, {
-  name: t('nav.reviews'),
+  name: 'nav.reviews',
   path: '/#reviews',
   external: false
 }, {
-  name: t('nav.contact'),
+  name: 'nav.contact',
   path: '/#contact',
   external: false
 }];
 
 export default class MainNav extends Component {
-
-  handleClick(e) {
-    e.preventDefault();
-    alert('hola');
-  }
+  /**
+   * Renders the component.
+   * 
+   * @returns {string} The component's JSX code.
+   */
   render() {
     let template;
 
     return (
-      <Nav>
-        {
-          routes.map((route, key) => {
-            if (route.external) {
-              template = (
-                <NavItem eventKey={ 'nav-' + key } href={ route.path } key={ key }>
-                  {route.name}
-                </NavItem>
-              );
-            } else {
-              template = <HashNavItem eventKey={ 'nav-' + key } name={ route.name } to={ route.path } key={ key } />;
-            }
-            return template;
-          })
-        }
-      </Nav>
+        <I18n>
+          {
+            (t, { i18n, tr, ready }) => (
+              <Nav>
+                {
+                  routes.map((route, key) => {
+                    if (route.external) {
+                      template = (
+                        <NavItem eventKey={ 'nav-' + key } href={ route.path } key={ key }>
+                          { t(route.name) }
+                        </NavItem>
+                      );
+                    } else {
+                      template = <HashNavItem eventKey={ 'nav-' + key } name={ t(route.name) } to={ route.path } key={ key } />;
+                    }
+                    return template;
+                  })
+                }
+
+                <Flags />
+              </Nav>
+            )
+          }
+        </I18n>
     );
   }
 }

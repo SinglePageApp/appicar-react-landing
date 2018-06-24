@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Spinner } from 'react-spinkit';
-
-import t from '../../../i18n';
+import { I18n } from 'react-i18next';
 
 import './Stores.css';
 
@@ -35,62 +34,68 @@ export default class Stores extends Component {
   render() {
     return (
       <div id="stores" className="special">
-        <div className="container">
-          <div className="special-heading">
-            <h3>{ t('home-page.stores.title') }</h3>
-          </div>
+        <I18n>
+          {
+            (t, { i18n, tr, ready }) => (
+              <div className="container">
+                <div className="special-heading">
+                  <h3>{ t('home-page.stores.title') }</h3>
+                </div>
 
-          { this.isLoading ? (
-              <Spinner name="line-scale" color="blue"/>
-            ) : (
-              <div className="special-grids">
-                {
-                  this.stores.map((store, key) => {
-                    return (
-                      <div className="col-md-4 w3l-special-grid" key={ key }>
-                        { this.isRowOdd(key) ? ( // Odd Row
-                            <div>
-                              <div className="col-md-6 w3ls-special-img">
-                                <div className="w3ls-special-text effect-1">
-                                  <img className="storeImage" src={ store.image } alt={ store.name } />
-                                </div>
-                              </div>
-                              <div className="col-md-6 agileits-special-info">
-                                <h4>{ store.name }</h4>
-                                <p>
-                                  <b>{ store.description }</b>
-                                  <br />{ store.address }, { store.city }
-                                </p>
-                              </div>
-                              <div className="clearfix"></div>
+                { this.isLoading ? (
+                    <Spinner name="line-scale" color="blue"/>
+                  ) : (
+                    <div className="special-grids">
+                      {
+                        this.stores.map((store, key) => {
+                          return (
+                            <div className="col-md-4 w3l-special-grid" key={ key }>
+                              { this.isRowOdd(key) ? ( // Odd Row
+                                  <div>
+                                    <div className="col-md-6 w3ls-special-img">
+                                      <div className="w3ls-special-text effect-1">
+                                        <img className="storeImage" src={ store.image } alt={ store.name } />
+                                      </div>
+                                    </div>
+                                    <div className="col-md-6 agileits-special-info">
+                                      <h4>{ store.name }</h4>
+                                      <p>
+                                        <b>{ store.description }</b>
+                                        <br />{ store.address }, { store.city }
+                                      </p>
+                                    </div>
+                                    <div className="clearfix"></div>
+                                  </div>
+                                ) : ( // Even Row
+                                  <div>
+                                    <div className="col-md-6 agileits-special-info">
+                                      <h4>{ store.name }</h4>
+                                      <p>
+                                        <b>{ store.description }</b>
+                                        <br />{ store.address }, { store.city }
+                                      </p>
+                                    </div>
+                                    <div className="col-md-6 w3ls-special-img">
+                                      <div className="w3ls-special-text effect-1">
+                                        <img className="storeImage" src={ store.image } alt={ store.name } />
+                                      </div>
+                                    </div>
+                                    <div className="clearfix"></div>
+                                  </div>
+                                )
+                              }
                             </div>
-                          ) : ( // Even Row
-                            <div>
-                              <div className="col-md-6 agileits-special-info">
-                                <h4>{ store.name }</h4>
-                                <p>
-                                  <b>{ store.description }</b>
-                                  <br />{ store.address }, { store.city }
-                                </p>
-                              </div>
-                              <div className="col-md-6 w3ls-special-img">
-                                <div className="w3ls-special-text effect-1">
-                                  <img className="storeImage" src={ store.image } alt={ store.name } />
-                                </div>
-                              </div>
-                              <div className="clearfix"></div>
-                            </div>
-                          )
-                        }
-                      </div>
-                    );
-                  })
+                          );
+                        })
+                      }
+                      <div className="clearfix"> </div>
+                    </div>
+                  )
                 }
-                <div className="clearfix"> </div>
               </div>
             )
           }
-        </div>
+        </I18n>
       </div>
     )
   }
