@@ -10,7 +10,7 @@ export default class Offers extends Component {
       <div className="jarallax offers">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="offers-heading">
                   <h3>{ t('about-page.offers') }</h3>

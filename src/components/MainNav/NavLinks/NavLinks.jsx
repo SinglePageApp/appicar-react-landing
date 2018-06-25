@@ -50,7 +50,7 @@ export default class MainNav extends Component {
     return (
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <Nav>
                 {
                   routes.map((route, key) => {

@@ -10,7 +10,7 @@ export default class Reviews extends Component {
       <div id="reviews" className="customer">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="customer-heading">
                   <h3>{ t('home-page.reviews.title') }</h3>

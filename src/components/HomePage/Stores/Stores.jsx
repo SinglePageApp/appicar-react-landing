@@ -36,7 +36,7 @@ export default class Stores extends Component {
       <div id="stores" className="special">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="special-heading">
                   <h3>{ t('home-page.stores.title') }</h3>

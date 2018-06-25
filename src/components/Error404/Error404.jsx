@@ -13,7 +13,7 @@ export default class Error404 extends Component {
       <div className="background">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="banner">
                 <div className="container">
                   <div className="error-404">

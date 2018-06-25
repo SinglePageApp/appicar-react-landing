@@ -10,7 +10,7 @@ export default class SearchBox extends Component {
       <div className="search-box">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="input-group search-input">
                 <span className="input-group-addon" id="basic-addon1">
                   <span>{ t('searchbox.iWant') }</span>

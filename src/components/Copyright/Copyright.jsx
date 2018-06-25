@@ -12,7 +12,7 @@ export default class Copyright extends Component {
       <div className="copyright">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="w3agile-list">
                   <NavLinks />
