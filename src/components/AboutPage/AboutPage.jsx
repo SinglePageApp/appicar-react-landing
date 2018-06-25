@@ -15,7 +15,7 @@ export default class AboutPage extends Component {
 
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="about">
                 <div className="container">
                   <div className="about-heading">

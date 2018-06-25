@@ -10,7 +10,7 @@ export default class Services extends Component {
       <div id="services" className="features">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="features-heading">
                   <h3>{ t('home-page.services.title') }</h3>

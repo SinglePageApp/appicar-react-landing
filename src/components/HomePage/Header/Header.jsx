@@ -30,7 +30,7 @@ export default class Header extends Component {
     return (
       <I18n>
         {
-          (t, { i18n, tr, ready }) => (
+          (t) => (
             <div className="background">
               <ul className="cb-slideshow">
                 <li><span>Image 01</span></li>

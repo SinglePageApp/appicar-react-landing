@@ -10,7 +10,7 @@ export default class Footer extends Component {
       <div className="footer">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="footer-grids">
                   <div className="footer-heading">

@@ -10,7 +10,7 @@ export default class Team extends Component {
       <div className="team">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
             <div className="container">
               <div className="team-heading">
                 <h3>{ t('about-page.team.title') }</h3>

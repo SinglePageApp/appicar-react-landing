@@ -10,7 +10,7 @@ export default class Contact extends Component {
       <div id="contact" className="contact">
         <I18n>
           {
-            (t, { i18n, tr, ready }) => (
+            (t) => (
               <div className="container">
                 <div className="contact-heading">
                   <h2>{ t('home-page.contact.contact') }</h2>
