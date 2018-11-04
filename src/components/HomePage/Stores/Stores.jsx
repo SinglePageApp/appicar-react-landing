@@ -19,7 +19,7 @@ export default class Stores extends Component {
     this.state = {
       variables: {
         skip: 0,
-        limit: 4
+        limit: 12
       }
     }
   }
