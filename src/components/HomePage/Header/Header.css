@@ -160,7 +160,7 @@ ul {
   position: relative;
   background: rgba(0, 0, 0, 0.38);
   background-size: cover;
-  padding: 1em 0 3em;
+  padding: 1em 0 2em;
   text-shadow: 1px 1px #000000;
   min-height: 697px;
   z-index: 999999;

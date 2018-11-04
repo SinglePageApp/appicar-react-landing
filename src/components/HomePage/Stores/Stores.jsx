@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Spinner } from 'react-spinkit';
 import { I18n } from 'react-i18next';
 import { QueryRenderer } from 'react-relay';
 
@@ -11,17 +10,20 @@ import './Stores.css';
 
 
 export default class Stores extends Component {
-
+  /**
+   * Constructor.
+   */
   constructor() {
     super();
-
+    // State.
     this.state = {
       variables: {
         skip: 0,
-        limit: 12
+        limit: 4
       }
     }
   }
+
   /**
    * Renders the component.
    * 
@@ -37,14 +39,12 @@ export default class Stores extends Component {
                 <div className="special-heading">
                   <h3>{ t('home-page.stores.title') }</h3>
                 </div>
-
                 <QueryRenderer
                   environment={ environment }
                   query={ query }
                   variables={ this.state.variables }
                   render={ stores }
                 />
-
               </div>
             )
           }

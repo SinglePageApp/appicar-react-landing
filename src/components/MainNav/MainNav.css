@@ -55,6 +55,10 @@ ul.nav.navbar-nav {
 div#bs-example-navbar-collapse-1 {
   padding: 0;
 }
+.navbar-inverse {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
 /* //DEFAULT DISPLAY */
 
 /* DISPLAY 640px */
@@ -97,7 +101,7 @@ div#bs-example-navbar-collapse-1 {
 }
 /* //DISPLAY 640px */
 
-/* //DISPLAY 480px */
+/* DISPLAY 480px */
 @media (max-width: 480px) {
   .navbar ul li a {
     padding: 0.5em 0;

@@ -21,10 +21,6 @@ const routes = [{
   path: '/#stores',
   external: false
 }, {
-  name: 'nav.myAccount',
-  path: 'http://my-react.appicar.com/',
-  external: true
-}, {
   name: 'nav.services',
   path: '/#services',
   external: false

@@ -46,7 +46,7 @@
 .fa-credit-card,
 .fa-book,
 .fa-search {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   color: #ffffff;
   padding: 0.3em;
 }

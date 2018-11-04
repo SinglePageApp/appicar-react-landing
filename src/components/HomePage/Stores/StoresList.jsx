@@ -3,10 +3,9 @@ import { I18n } from 'react-i18next';
 import Spinner from 'react-spinkit';
 
 /**
- * FeaturedStores component.
+ * Stores List component.
  */
 export default ({ error, props }) => {
-  console.log(props);
   if (error) {
     return <div className="special-grids">Error!</div>;
   }
