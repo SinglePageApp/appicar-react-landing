@@ -18,32 +18,29 @@ export default class Reviews extends Component {
                 <div className="customer-heading-grids">
                   <div className="col-md-4 customer-grid">
                     <div className="customer-info">
-                      <p>Etiam euismod leo in felis imperdiet, non interdum diam egestas. Aliquam non ex eget lorem vulputate auctor. Etiam
-                        sit amet nibh non tortor posuere mollis non vel velit. Praesent porttitor elit nec dapibus bibendum.</p>
+                      <p>{ t('home-page.reviews.text1') }</p>
                     </div>
                     <div className="customer-img">
-                      <img src="./assets/images/c1.jpg" alt="" />
-                      <h5>Dapibus</h5>
+                      <img src="http://cdn.appicar.com/users/GnLdeKy6kmDhAkAkF.jpg" alt="Edgardo" />
+                      <h5>Edgardo</h5>
                     </div>
                   </div>
                   <div className="col-md-4 customer-grid">
                     <div className="customer-info">
-                      <p>Etiam euismod leo in felis imperdiet, non interdum diam egestas. Aliquam non ex eget lorem vulputate auctor. Etiam
-                        sit amet nibh non tortor posuere mollis non vel velit. Praesent porttitor elit nec dapibus bibendum.</p>
+                      <p>{ t('home-page.reviews.text2') }</p>
                     </div>
                     <div className="customer-img">
-                      <img src="./assets/images/c2.jpg" alt="" />
-                      <h5>Vulputate</h5>
+                      <img src="http://cdn.appicar.com/users/to-add.jpg" alt="Carla" />
+                      <h5>Carla</h5>
                     </div>
                   </div>
                   <div className="col-md-4 customer-grid">
                     <div className="customer-info">
-                      <p>Etiam euismod leo in felis imperdiet, non interdum diam egestas. Aliquam non ex eget lorem vulputate auctor. Etiam
-                        sit amet nibh non tortor posuere mollis non vel velit. Praesent porttitor elit nec dapibus bibendum.</p>
+                      <p>{ t('home-page.reviews.text3') }</p>
                     </div>
                     <div className="customer-img">
-                      <img src="./assets/images/c3.jpg" alt="" />
-                      <h5>Interdum</h5>
+                      <img src="http://cdn.appicar.com/users/to-add2.jpg" alt="Fabricio" />
+                      <h5>Fabricio</h5>
                     </div>
                   </div>
                   <div className="clearfix"></div>

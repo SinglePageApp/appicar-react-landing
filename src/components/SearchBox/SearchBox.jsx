@@ -1,47 +1,91 @@
 import React, { Component } from "react";
 import { I18n } from 'react-i18next';
+import { FormGroup, InputGroup, FormControl, DropdownButton, MenuItem } from 'react-bootstrap';
 
 import "./SearchBox.css";
 
 
 export default class SearchBox extends Component {
+  /**
+   * Constructor.
+   */
+  constructor() {
+    super();
+    // State.
+    this.state = {
+      selectedAction: 'searchbox.eatAction'
+    }
+    // Methods.
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  /**
+   * Handles the menu item's action (eat or drink) dropdown.
+   * 
+   * @param {*} eventKey 
+   */
+  handleSelect(eventKey) {
+    this.setState({
+      selectedAction: 'searchbox.' + eventKey
+    });
+  }
+
+  /**
+   * Transform an action into menu item's type (food or drink).
+   */
+  getMenuTypeFromAction(action) {
+    return action === 'searchbox.eatAction' ? 'searchbox.food' : 'searchbox.drink';
+  }
+
+  /**
+   * Handles the search submition.
+   * 
+   * @param {Event} e The event's instance.
+   */
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
-      <div className="search-box">
+      <form className="search-box" onSubmit={ this.handleSubmit }>
         <I18n>
           {
             (t) => (
-              <div className="input-group search-input">
-                <span className="input-group-addon" id="basic-addon1">
-                  <span>{ t('searchbox.iWant') }</span>
-                  <button
-                    type="button"
-                    className="btn btn-default dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <span>{ t('searchbox.eatAction') }</span>
-                    <span className="caret" />
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a href="#">{ t('searchbox.eatAction') }</a>
-                    </li>
-                    <li>
-                      <a href="#">{ t('searchbox.drinkAction') }</a>
-                    </li>
-                  </ul>
-                </span>
-                <input type="text" className="form-control" placeholder="..." />
-                <span className="input-group-btn">
-                  <button className="btn btn-default" type="button">{ t('searchbox.go') }</button>
-                </span>
-              </div>
+              <FormGroup>
+                <InputGroup>
+                  <InputGroup.Addon>
+                    { t('searchbox.iWant') }&nbsp;
+                    <DropdownButton
+                      title={ t(this.state.selectedAction) }
+                      key="drop-down"
+                      id="searchbox-drop-down"
+                      onSelect={ this.handleSelect }
+                    >
+                      <MenuItem eventKey="eatAction" active={ this.state.selectedAction === 'searchbox.eatAction' }>
+                        { t('searchbox.eatAction') }
+                      </MenuItem>
+                      <MenuItem eventKey="drinkAction" active={ this.state.selectedAction === 'searchbox.drinkAction' }>
+                        { t('searchbox.drinkAction') }
+                      </MenuItem>
+                    </DropdownButton>
+                  </InputGroup.Addon>
+                  <FormControl
+                    type="text"
+                    placeholder={
+                      t('searchbox.input') + t(this.getMenuTypeFromAction(this.state.selectedAction)) + t('searchbox.category')
+                    }
+                  />
+                  <InputGroup.Addon>
+                    <FormControl type="submit" value={ t('searchbox.reset') } bsClass="search-reset" />
+                    <FormControl type="submit" value={ t('searchbox.go') } bsClass="search-go" />
+                  </InputGroup.Addon>
+                </InputGroup>
+              </FormGroup>
             )
           }
         </I18n>
-      </div>
+      </form>
     );
   }
 }

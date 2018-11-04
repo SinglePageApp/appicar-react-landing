@@ -1,0 +1,99 @@
+schema {
+  query: Query
+}
+
+type Query {
+  storesCount: Int,
+  stores(menuItemType: String, menuItemCategory: String, skip: Int, limit: Int): [Store],
+  featuredStores: [Store],
+  store(URI: String): Store
+}
+
+type Mutation { 
+  sendEmail(from: String, subject: String, text: String): Boolean
+}
+
+type Hack {
+	id: ID
+}
+
+type Translatable {
+  en: String,
+  es: String,
+  it: String
+}
+
+type Store {
+  _id: String
+	URI: String
+	name: String
+	date: String
+	category: String
+	description: Translatable
+	address: String
+	country: String
+	city: String
+	featured: Boolean
+	lat: Float
+	lng: Float
+  image: String
+	menu: Menu
+	reviews: [Review]
+	points: Int
+}
+
+type Menu {
+  items: MenuItem,
+  promotions: [Promotion]
+}
+
+type MenuItem {
+	food: [Food],
+	drink: [Drink]
+}
+
+type Promotion {
+	_id: String,
+	date: String,
+	name: Translatable,
+	paymentMethods: [String],
+	price: [Price],
+	picture: String
+}
+
+type Food {
+	_id: String,
+	type: String,
+	category: String,
+	date: String,
+	name: Translatable,
+	paymentMethods: [String],
+	price: [Price],
+	picture: String
+}
+
+type Drink {
+	_id: String,
+	type: String,
+	category: String,
+	date: String,
+	name: Translatable,
+	paymentMethods: [String],
+	price: [Price],
+	picture: String
+}
+
+type Price {
+  currency: String,
+  value: Float
+}
+
+type Review {
+  _id: String
+	clientId: String
+	clientName: String
+	clientPicture: String
+	date: String
+	points: Int
+	text: Translatable
+}
