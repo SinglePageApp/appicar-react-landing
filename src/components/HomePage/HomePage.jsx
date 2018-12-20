@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from './Header/Header';
 import Stores from './Stores/Stores';
 import Services from './Services/Services';
+import Reviews from './Reviews/Reviews';
 import Contact from './Contact/Contact';
 
 import './HomePage.css';

@@ -1,92 +1,106 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
 
 import './Services.css';
+
 
 export default class Services extends Component {
   render() {
     return (
       <div id="services" className="features">
-        <div className="container">
-          <div className="features-heading">
-            <h3 translate>home-page.services.title</h3>
-          </div>
-          <div className="features-grids">
-            <div className="col-md-4 features-left">
-              <div className="features-left-info">
-              </div>
-            </div>
-            <div className="col-md-8 features-right">
-              <div className="features-right-info">
-                <h4 translate>home-page.services.description</h4>
-              </div>
-              <div className="features-right-grids">
-                <div className="features-right-left" title="Tell me more!">
-                  <div className="features-right-icon effect-2">
-                    <i className="fa fa-users" aria-hidden="true"></i>
+        <I18n>
+          {
+            (t) => (
+              <div className="container">
+                <div className="features-heading">
+                  <h3>{ t('home-page.services.title') }</h3>
+                </div>
+                <div className="features-grids">
+                  <div className="col-md-4 features-left">
+                    <div className="features-left-info">
+                    </div>
                   </div>
-                </div>
-                <div className="features-right-right">
-                  <p>
-                    <b>Group reservations</b> so you can enjoy your outings with your family or friends. The bill can be divided individually
-                    between the diners or you can pay for all or some of them. You're free to choose!
-                  </p>
-                </div>
-                <div className="clearfix"> </div>
-              </div>
-              <div className="features-right-grids">
-                <div className="features-right-left" title="Tell me more!">
-                  <div className="features-right-icon effect-2">
-                    <i className="fa fa-book" aria-hidden="true"></i>
+                  <div className="col-md-8 features-right">
+                    <div className="features-right-info">
+                      <h4>{ t('home-page.services.description') }</h4>
+                    </div>
+                    <div className="features-right-grids">
+                      <div className="features-right-left" title="Tell me more!">
+                        <div className="features-right-icon effect-2">
+                          <i className="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="features-right-right">
+                        <p>
+                          <b>{ t('home-page.services.groupReservations1') }</b>&nbsp;
+                          { t('home-page.services.groupReservations2') }
+                        </p>
+                      </div>
+                      <div className="clearfix"> </div>
+                    </div>
+                    <div className="features-right-grids">
+                      <div className="features-right-left" title="Tell me more!">
+                        <div className="features-right-icon effect-2">
+                          <i className="fa fa-book" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="features-right-right">
+                        <p>
+                          <b>{ t('home-page.services.menu') }</b>&nbsp;
+                          { t('home-page.services.and') }&nbsp;
+                          <b>{ t('home-page.services.order') }</b>&nbsp;
+                          { t('home-page.services.whatUWant') }
+                        </p>
+                      </div>
+                      <div className="clearfix"> </div>
+                    </div>
+                    <div className="features-right-grids">
+                      <div className="features-right-left" title="Tell me more!">
+                        <div className="features-right-icon effect-2">
+                          <i className="fa fa-credit-card" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="features-right-right">
+                        <p>
+                          <b>{ t('home-page.services.pay') }</b>&nbsp;
+                          { t('home-page.services.cellphone') }&nbsp;
+                          <i>{ t('home-page.services.cash') }</i>,&nbsp;
+                          <i>{ t('home-page.services.credit') }</i>,&nbsp;
+                          <i>{ t('home-page.services.bank') }</i>,&nbsp;
+                          <i>{ t('home-page.services.networks') }</i>&nbsp;
+                          { t('home-page.services.and') }&nbsp;
+                          <i>{ t('home-page.services.online') }</i>.
+                        </p>
+                      </div>
+                      <div className="clearfix"> </div>
+                    </div>
+                    <div className="features-right-grids">
+                      <div className="features-right-left" title="Tell me more!">
+                        <div className="features-right-icon effect-2">
+                          <i className="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="features-right-right">
+                        <p>
+                        <b>{ t('home-page.services.search') }</b>.&nbsp;
+                        { t('home-page.services.find') }&nbsp;
+                        <i>{ t('home-page.services.proximity') }</i>&nbsp;
+                        { t('home-page.services.gps') }&nbsp;
+                        <i>{ t('home-page.services.food') }</i>&nbsp;
+                        { t('home-page.services.or') }&nbsp;
+                        <i>{ t('home-page.services.drink') }</i>&nbsp;
+                        { t('home-page.services.offered') }.
+                        </p>
+                      </div>
+                      <div className="clearfix"> </div>
+                    </div>
                   </div>
+                  <div className="clearfix"> </div>
                 </div>
-                <div className="features-right-right">
-                  <p>
-                    <b>Consult the menu</b> and
-                    <b>order</b> what you want. You won't have to wait no longer for the waiter to come to your table and take your
-                    order!
-                  </p>
-                </div>
-                <div className="clearfix"> </div>
               </div>
-              <div className="features-right-grids">
-                <div className="features-right-left" title="Tell me more!">
-                  <div className="features-right-icon effect-2">
-                    <i className="fa fa-credit-card" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div className="features-right-right">
-                  <p>
-                    <b>Pay your order</b> from your cellphone and you won't have to ask for the bill and wait no longer for the waiter
-                    to come and charge you. Available payment methods are:
-                    <i>cash</i>,
-                    <i>credit cards</i>,
-                    <i>bank transfers</i>,
-                    <i>payment networks</i> and
-                    <i>online payment systems</i>.
-                  </p>
-                </div>
-                <div className="clearfix"> </div>
-              </div>
-              <div className="features-right-grids">
-                <div className="features-right-left" title="Tell me more!">
-                  <div className="features-right-icon effect-2">
-                    <i className="fa fa-search" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div className="features-right-right">
-                  <p>
-                    <b>Smart search</b>. You can find your destination by
-                    <i>proximity</i> using your cellphone's GPS or you can filter stores by
-                    <i>food</i> or
-                    <i>drink</i> offered.
-                  </p>
-                </div>
-                <div className="clearfix"> </div>
-              </div>
-            </div>
-            <div className="clearfix"> </div>
-          </div>
-        </div>
+            )
+          }
+        </I18n>
       </div>
     )
   }

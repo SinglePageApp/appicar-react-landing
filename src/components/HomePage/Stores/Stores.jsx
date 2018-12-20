@@ -1,67 +1,54 @@
 import React, { Component } from 'react';
+import { I18n } from 'react-i18next';
+import { QueryRenderer } from 'react-relay';
+
+import environment from '../../../relay/environment';
+import query from '../../../relay/queries/StoresQuery';
+import stores from './StoresList';
 
 import './Stores.css';
 
+
 export default class Stores extends Component {
+  /**
+   * Constructor.
+   */
+  constructor() {
+    super();
+    // State.
+    this.state = {
+      variables: {
+        skip: 0,
+        limit: 12
+      }
+    }
+  }
+
+  /**
+   * Renders the component.
+   * 
+   * @returns {string} The component's JSX code.
+   */
   render() {
     return (
-      <div id="stores" class="special">
-        <div class="container">
-          <div class="special-heading">
-            <h3 translate>home-page.stores.title</h3>
-          </div>
-
-          { this.isLoading ? (
-              <GearsLoadingSpinner>loading-spinner.loading</GearsLoadingSpinner>
-            ) : (
-              <div class="special-grids">
-                {
-                  this.stores.map((store, key) => {
-                    return (
-                      <div class="col-md-4 w3l-special-grid" key={ key }>
-                        { this.isRowOdd(key) ? ( // Odd Row
-                            <div>
-                              <div class="col-md-6 w3ls-special-img">
-                                <div class="w3ls-special-text effect-1">
-                                  <img class="storeImage" src={ store.image } alt={ store.name } />
-                                </div>
-                              </div>
-                              <div class="col-md-6 agileits-special-info">
-                                <h4>{ store.name }</h4>
-                                <p>
-                                  <b>{ store.description }</b>
-                                  <br />{ store.address }, { store.city }
-                                </p>
-                              </div>
-                              <div class="clearfix"></div>
-                            </div>
-                          ) : ( // Even Row
-                            <div>
-                              <div class="col-md-6 agileits-special-info">
-                                <h4>{ store.name }</h4>
-                                <p>
-                                  <b>{ store.description }</b>
-                                  <br />{ store.address }, { store.city }
-                                </p>
-                              </div>
-                              <div class="col-md-6 w3ls-special-img">
-                                <div class="w3ls-special-text effect-1">
-                                  <img class="storeImage" src={ store.image } alt={ store.name } />
-                                </div>
-                              </div>
-                              <div class="clearfix"></div>
-                            </div>
-                          )
-                        }
-                      </div>
-                    );
-                  })
-                }
-                <div class="clearfix"> </div>
+      <div id="stores" className="special">
+        <I18n>
+          {
+            (t) => (
+              <div className="container">
+                <div className="special-heading">
+                  <h3>{ t('home-page.stores.title') }</h3>
+                </div>
+                <QueryRenderer
+                  environment={ environment }
+                  query={ query }
+                  variables={ this.state.variables }
+                  render={ stores }
+                />
               </div>
             )
           }
-        </div>
+        </I18n>
       </div>
     )
   }

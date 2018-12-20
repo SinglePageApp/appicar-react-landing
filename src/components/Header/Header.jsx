@@ -10,6 +10,6 @@ export default class Header extends Component {
           <div className="container"></div>
         </div>
       </div>
-    )
+    );
   }
 }

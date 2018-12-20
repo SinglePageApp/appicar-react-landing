@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 import logo from './logo.svg';
 import "./Logo.css";
@@ -9,9 +10,9 @@ export default class Logo extends Component {
       <div className="header">
         <div className="logo">
           <h1>
-            <a routerLink="/">
+            <Link to="/">
               <img alt="Appicar" src={ logo } />
-            </a>
+            </Link>
           </h1>
         </div>
         <div className="clearfix" />

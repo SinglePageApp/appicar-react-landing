@@ -47,13 +47,17 @@ ul.nav.navbar-nav {
   padding-bottom: 1em;
   border-bottom: solid 1px #fd5c63;
 }
-.navbar ul li a.active {
+.navbar ul li.active a {
   color: #fd5c63 !important;
   padding-bottom: 1em;
   border-bottom: solid 1px #fd5c63;
 }
 div#bs-example-navbar-collapse-1 {
   padding: 0;
+}
+.navbar-inverse {
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 /* //DEFAULT DISPLAY */
 
@@ -97,7 +101,7 @@ div#bs-example-navbar-collapse-1 {
 }
 /* //DISPLAY 640px */
 
-/* //DISPLAY 480px */
+/* DISPLAY 480px */
 @media (max-width: 480px) {
   .navbar ul li a {
     padding: 0.5em 0;

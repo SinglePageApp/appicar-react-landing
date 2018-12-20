@@ -1,0 +1,8 @@
+{
+  "development": {
+    "API_SERVER": "http://localhost:9000/graphql"
+  },
+  "production": {
+    "API_SERVER": "http://api.appicar.com/graphql"
+  }
+}
